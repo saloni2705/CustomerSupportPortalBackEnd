@@ -1,0 +1,93 @@
+version: "3.1"
+nlu:
+  - intent: greet
+    examples: |
+      - Hi
+      - Hello
+      - Hey
+      - Hey there
+      - Greetings
+
+  - intent: bye
+    examples: |
+      - Bye
+      - Goodbye
+      - See you later
+
+  - intent: thanks
+    examples: |
+      - Thanks
+      - Thank you
+
+  - intent: working_hours
+    examples : |
+      - What are your working hours?
+      - When are you open?
+      - What time do you operate?
+
+  - intent: services_offered
+    examples: |
+      - What services do you offer?
+      - Can you tell me about your services?
+      - What banking services are available?
+
+  - intent: open_new_account
+    examples: |
+      - How can I open a new account?
+      - What's the process for opening an account?
+      - Can you help me with account opening?
+
+  - intent: post_complaint
+    examples: |
+      - How can I post a complaint?
+      - How to post a complaint?
+      - Where to post a complaint?
+
+  - intent: post_complaint_yes
+    examples: |
+      - Yes
+      - Yes, I have logged in
+      - Yes, I am already logged in
+      - Now, I have logged in as a customer
+      - I have logged in, now how can I post a complaint?
+      - Now, I have logged in, so tell me how can I post a complaint?
+
+  - intent: post_complaint_no
+    examples: |
+      - No
+      - No, I have not yet logged
+      - No, I am not logged in
+      - No, I should I log in?
+
+  - intent: complaint
+    examples: |
+      - In how many days issues are resolved?
+      - Will I receive an email if my issues are resolved?
+      - How can I know that my complaint is registered or not?
+      - What will happen after I post a complaint?
+      - Steps after posting a complaint
+
+  - intent: view_complaint
+    examples: |
+      - How can I view my complaints?
+      - Where can I find my added complaints?
+      - Give me list of my previous complaints
+      - Where to check the status of all my complaints
+
+  - intent: update_profile
+    examples: |
+      - How to update my profile?
+      - How can I update my details?
+      - Where can I go to update my profile/details?
+      - I want to change my details
+      - How to change profile details
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: LanguageModelTokenizer
+  - name: CountVectorsFeaturizer
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
