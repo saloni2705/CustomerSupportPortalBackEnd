@@ -1,157 +1,113 @@
-# 🍽️ Restaurant Management System
+# 🛠️ Customer Support Portal — Backend
+
+## Overview
+
+This repository contains the **Spring Boot backend** for the Customer Support Portal.
+
+It handles:
+
+- Complaint processing
+- AI chatbot integration
+- Complaint classification
+- Engineer assignment
+- Email notifications
+- REST API services for frontend interaction
+
+---
 
 ## Problem Statement
 
-In small and mid-sized restaurants, billing and order tracking is often handled manually or using basic tools.
+Customer complaints are often handled manually, which leads to:
 
-Common challenges include:
-
-- Manual bill calculation errors
-- No structured storage of order history
-- Difficulty in tracking past transactions
-- No easy way to manage customer feedback
-- Time-consuming billing process
-
-Result: Inefficient operations and lack of data tracking.
+- Delayed response time
+- Improper issue classification
+- Inefficient ticket routing
+- Lack of automation
+- Poor customer experience
 
 ---
 
-## Solution
+## Backend Responsibilities
 
-The Restaurant Management System is a desktop-based application that:
+The backend system provides:
 
-- Calculates bills automatically
-- Applies tax and service charges
-- Stores order records in a database
-- Displays past transaction history
-- Allows record deletion
-- Collects customer feedback
-- Displays menu pricing
-
-This enables restaurant staff to manage orders efficiently through a simple GUI.
-
----
-
-## System Workflow
-
-User Input → Bill Calculation → Record Storage → Display in Table → Feedback Collection
+- Complaint submission APIs
+- Integration with Rasa NLU chatbot
+- Complaint classification logic
+- Engineer assignment handling
+- Email notification services
+- Data persistence and management
 
 ---
 
 ## Key Features
 
-- Automated bill calculation
-- Tax computation (18%)
-- Service charge calculation
-- Order history management
-- Record deletion
-- Customer feedback collection
-- Menu card display
-- Simple graphical interface
+- RESTful API architecture
+- NLP chatbot integration using Rasa
+- Automated complaint categorization
+- Engineer assignment logic
+- Email notification support
+- Scalable Spring Boot architecture
 
 ---
 
 ## Tech Stack
 
-### Application Layer
-- Python
-
-### GUI
-- Tkinter
-
-### Database
-- SQLite
+- Java
+- Spring Boot
+- MySQL
+- Rasa NLU
+- REST APIs
+- Maven
 
 ---
 
-## Database
-
-The system uses a SQLite local database.
-
-Database File: Restaurant.db
-
-Tables Used:
-
-Restaurantrecords – Stores order and billing details  
-FEEDBACK – Stores customer feedback
-
----
-
-## Billing Logic
-
-Item Prices:
-
-- Pizza – ₹240
-- Burger – ₹125
-- Ice Cream – ₹80
-- Drinks – ₹60
-
-Additional Charges:
-
-- Tax: 18%
-- Service Charge: Cost / 99
+## Backend Structure
+```
+src/
+└── main/
+├── java/
+│ └── controllers
+│ └── services
+│ └── repositories
+│ └── models
+└── resources/
+└── application.properties
+```
 
 ---
 
-## Project Structure
+## API Responsibilities
 
-Restaurant-Management-System/
+The backend exposes APIs for:
 
-- main.py
-- Restaurant.db
-- README.md
-
----
-
-## Application Modules
-
-Billing Module
-- Enter order quantity
-- Calculate total cost
-- Store order details
-
-Order History
-- Displays stored orders
-- Allows deletion of records
-
-Feedback Module
-- Collects customer experience
-- Stores responses in database
-
-Menu Card
-- Displays available items with prices
+- Complaint submission
+- Complaint classification
+- Chatbot interaction
+- Engineer assignment
+- Notification handling
 
 ---
 
-## How to Run the Project
+## Related Repositories
 
-Step 1: Install Python
+Frontend:  
+https://github.com/saloni2705/CustomerSupportFrontEnd
 
-Check installation:
+---
 
-python --version
+## Demo
 
-Step 2: Run Application
-
-python main.py
+https://1drv.ms/v/c/0f835ea598383cbc/EWOEllYHvEdPgZH2enizPl8BcVx20IyTb_2JYE6I_dZ4eA?e=y64A2T
 
 ---
 
 ## Future Enhancements
 
-- Login authentication
-- Printable bill generation
-- Additional menu categories
-- Payment integration
+- Role-based access control
+- Advanced complaint analytics
+- SLA monitoring
+- Microservice architecture
+- Scalable deployment support
 
 ---
-
-## Author
-
-Saloni Patil
-
----
-
-## Project Vision
-
-The goal of this system is to simplify restaurant billing and record management through an easy-to-use desktop interface, improving efficiency and reducing manual errors.
